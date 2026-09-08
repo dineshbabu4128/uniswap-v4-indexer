@@ -1,0 +1,2830 @@
+$ node scripts/dev.mjs --config config.avalanche.yaml
+dev: config=config.avalanche.yaml pgSchema=avalanche clickhouseDb=avalanche
+Using Postgres already running on port 5434
+Using Hasura already running on port 8080
+[20:03:24.363] [32mINFO[39m: [36mFound existing indexer storage. Resuming indexing state...[39m
+
+[20:03:24.412] [32mINFO[39m: [36mSuccessfully resumed indexing state! Continuing from the last checkpoint.[39m
+    [35mprogress[39m: {
+      "43114": 85862425
+    }
+
+[20:03:24.609] [32mINFO[39m: [36mEvents without a handler, skipped for indexing: PoolManager (Approval, Donate, OperatorSet, OwnershipTransferred, ProtocolFeeControllerUpdated, ProtocolFeeUpdated, Transfer)[39m
+
+Created client for chain 43114
+[20:03:31.613] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85867306
+    [35mlogIndex[39m: 24
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7386"
+
+[20:03:31.689] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85873027
+    [35mlogIndex[39m: 4
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "5550"
+
+[20:03:33.951] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85897416
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7384"
+
+[20:03:33.951] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85897426
+    [35mlogIndex[39m: 5
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7333"
+
+[20:03:33.954] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85897806
+    [35mlogIndex[39m: 14
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+
+[20:03:33.954] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85897806
+    [35mlogIndex[39m: 14
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "204097437920168"
+    [35monChainEndOfBlock[39m: "204209030941768"
+
+[20:03:34.417] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85914450
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7400"
+
+[20:03:34.423] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85915889
+    [35mlogIndex[39m: 44
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7399"
+
+[20:03:36.520] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85960864
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "204209030941768"
+    [35monChainEndOfBlock[39m: "204332233745585"
+
+[20:03:36.688] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85980635
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7199"
+
+[20:03:36.749] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 85984723
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7413"
+
+[20:03:40.155] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86019217
+    [35mlogIndex[39m: 7
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "204332233745585"
+    [35monChainEndOfBlock[39m: "204529067426342"
+
+[20:03:40.383] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86033732
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7391"
+
+[20:03:44.139] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86036904
+    [35mlogIndex[39m: 7
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7111"
+
+[20:03:50.588] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86089620
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "6173"
+
+[20:03:53.634] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86098911
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7420"
+
+[20:03:58.941] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86183351
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "6977"
+
+[20:04:06.298] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86241796
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7421"
+
+[20:04:06.301] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86241941
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7424"
+
+[20:04:06.301] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86241941
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7424"
+    [35mindexed[39m: "1031988066165918463"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:04:06.301] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86242003
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7422"
+
+[20:04:06.301] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86242003
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7422"
+    [35mindexed[39m: "27401764760925662"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:04:06.819] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86257969
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "204529067426342"
+    [35monChainEndOfBlock[39m: "205093428415330"
+
+[20:04:09.604] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86289599
+    [35mlogIndex[39m: 4
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "205093428415330"
+    [35monChainEndOfBlock[39m: "205239224250736"
+
+[20:04:09.707] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86301191
+    [35mlogIndex[39m: 14
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "205239224250736"
+    [35monChainEndOfBlock[39m: "205672615058725"
+
+[20:04:09.786] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86310577
+    [35mlogIndex[39m: 249
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7408"
+
+[20:04:09.818] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86313940
+    [35mlogIndex[39m: 161
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "3684"
+
+[20:04:14.256] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86339471
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7467"
+    [35mindexed[39m: "206226610119024518"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:04:20.153] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86412604
+    [35mlogIndex[39m: 38
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7491"
+    [35mindexed[39m: "947049988902262314"
+    [35monChainEndOfBlock[39m: "1117147389502151097"
+
+[20:04:20.156] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86412763
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7491"
+    [35mindexed[39m: "1117147389502151097"
+    [35monChainEndOfBlock[39m: "1442937766666495634"
+
+[20:04:20.186] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86415834
+    [35mlogIndex[39m: 12
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7491"
+    [35mindexed[39m: "1442937766666495634"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:04:20.827] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86421879
+    [35mlogIndex[39m: 157
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "205672615058725"
+    [35monChainEndOfBlock[39m: "205895616741799"
+
+[20:04:28.190] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86481726
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "309"
+
+[20:04:28.645] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86496195
+    [35mlogIndex[39m: 14
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "205895616741799"
+    [35monChainEndOfBlock[39m: "206121224897797"
+
+[20:04:32.258] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86499497
+    [35mlogIndex[39m: 13
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7417"
+
+[20:04:32.258] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86499497
+    [35mlogIndex[39m: 13
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7417"
+    [35mindexed[39m: "2172446998850"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:04:34.623] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86517669
+    [35mlogIndex[39m: 39
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7517"
+    [35mindexed[39m: "99760897"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:04:38.195] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86545568
+    [35mlogIndex[39m: 133
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "206121224897797"
+    [35monChainEndOfBlock[39m: "206349552329531"
+
+[20:04:45.356] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86590172
+    [35mlogIndex[39m: 21
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7396"
+
+[20:04:45.360] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86590313
+    [35mlogIndex[39m: 5
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7425"
+
+[20:04:45.462] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86595088
+    [35mlogIndex[39m: 15
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "206349552329531"
+    [35monChainEndOfBlock[39m: "206535240775457"
+
+[20:04:48.407] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86626960
+    [35mlogIndex[39m: 43
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7407"
+
+[20:04:48.407] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86626960
+    [35mlogIndex[39m: 43
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7407"
+    [35mindexed[39m: "205048146793498"
+    [35monChainEndOfBlock[39m: "207590377272395"
+
+[20:04:51.408] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86680194
+    [35mlogIndex[39m: 65
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7407"
+    [35mindexed[39m: "207590377272395"
+    [35monChainEndOfBlock[39m: "207806122574458"
+
+[20:04:51.411] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86680483
+    [35mlogIndex[39m: 59
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "206535240775457"
+    [35monChainEndOfBlock[39m: "206803320900014"
+
+[20:04:54.429] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86694825
+    [35mlogIndex[39m: 13
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7544"
+    [35mindexed[39m: "369903128141307"
+    [35monChainEndOfBlock[39m: "601787161360457"
+
+[20:04:56.496] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86744948
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "6172"
+
+[20:05:03.151] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86853007
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7240"
+
+[20:05:03.213] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86858814
+    [35mlogIndex[39m: 288
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "206803320900014"
+    [35monChainEndOfBlock[39m: "206959139874473"
+
+[20:05:04.222] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86880965
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7407"
+    [35mindexed[39m: "207806122574458"
+    [35monChainEndOfBlock[39m: "208061846464601"
+
+[20:05:07.248] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86904771
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7402"
+
+[20:05:07.404] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86913054
+    [35mlogIndex[39m: 122
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "206959139874473"
+    [35monChainEndOfBlock[39m: "207159750119432"
+
+[20:05:07.601] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86922816
+    [35mlogIndex[39m: 11
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7418"
+
+[20:05:10.352] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86948462
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "207159750119432"
+    [35monChainEndOfBlock[39m: "207317502097261"
+
+[20:05:10.366] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86949112
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7553"
+    [35mindexed[39m: "5035000150439636"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:05:10.596] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86962301
+    [35mlogIndex[39m: 14
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7407"
+    [35mindexed[39m: "208061846464601"
+    [35monChainEndOfBlock[39m: "208408105715917"
+
+[20:05:11.609] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 86989624
+    [35mlogIndex[39m: 2
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "207317502097261"
+    [35monChainEndOfBlock[39m: "207461644442911"
+
+[20:05:15.537] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87002342
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7466"
+    [35mindexed[39m: "1749601146595606"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:05:15.586] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87003607
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7561"
+    [35mindexed[39m: "1563261433509929"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:05:15.592] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87003812
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7560"
+    [35mindexed[39m: "1561297481500559"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:05:16.709] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87022110
+    [35mlogIndex[39m: 17
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7407"
+    [35mindexed[39m: "208408105715917"
+    [35monChainEndOfBlock[39m: "208766518065130"
+
+[20:05:20.025] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87044599
+    [35mlogIndex[39m: 2
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "207461644442911"
+    [35monChainEndOfBlock[39m: "207737412827150"
+
+[20:05:22.940] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87056752
+    [35mlogIndex[39m: 4
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7565"
+    [35mindexed[39m: "105516730305248986468"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:05:24.485] [43mUWARN[49m: [36mAll ERC-20 reads failed for 0xb2f030af9B6000912e13764018A8121751D86BE8 on chain 43114; not caching fallback metadata[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "Initialize"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87085864
+    [35mlogIndex[39m: 12
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+
+[20:05:54.035] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87104925
+    [35mlogIndex[39m: 30
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7407"
+    [35mindexed[39m: "208766518065130"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:05:54.037] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87104932
+    [35mlogIndex[39m: 215
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7406"
+    [35mindexed[39m: "207737412827150"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:05:55.959] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87114168
+    [35mlogIndex[39m: 48
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7626"
+    [35mindexed[39m: "196485783733096"
+    [35monChainEndOfBlock[39m: "196670971213456"
+
+[20:05:55.976] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87114977
+    [35mlogIndex[39m: 153
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "197301593813339"
+    [35monChainEndOfBlock[39m: "197489212295371"
+
+[20:06:07.975] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87154043
+    [35mlogIndex[39m: 50
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7392"
+
+[20:06:09.687] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87158116
+    [35mlogIndex[39m: 66
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "197489212295371"
+    [35monChainEndOfBlock[39m: "198161706912154"
+
+[20:06:09.724] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87159519
+    [35mlogIndex[39m: 10
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7626"
+    [35mindexed[39m: "196670971213456"
+    [35monChainEndOfBlock[39m: "197440692988025"
+
+[20:06:09.917] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87164861
+    [35mlogIndex[39m: 11
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7626"
+    [35mindexed[39m: "197440692988025"
+    [35monChainEndOfBlock[39m: "197882028610523"
+
+[20:06:10.006] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87167668
+    [35mlogIndex[39m: 39
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "198161706912154"
+    [35monChainEndOfBlock[39m: "213102669015481"
+
+[20:06:13.068] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87184833
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "213102669015481"
+    [35monChainEndOfBlock[39m: "213253607859634"
+
+[20:06:14.200] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87206385
+    [35mlogIndex[39m: 52
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7544"
+    [35mindexed[39m: "601787161360457"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:06:15.982] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87210404
+    [35mlogIndex[39m: 15
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "213253607859634"
+    [35monChainEndOfBlock[39m: "213498637197665"
+
+[20:06:16.054] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87211927
+    [35mlogIndex[39m: 38
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "213498637197665"
+    [35monChainEndOfBlock[39m: "213556501477873"
+
+[20:06:16.219] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87216319
+    [35mlogIndex[39m: 405
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "213556501477873"
+    [35monChainEndOfBlock[39m: "213617180548801"
+
+[20:06:16.266] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87217549
+    [35mlogIndex[39m: 30
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7626"
+    [35mindexed[39m: "197882028610523"
+    [35monChainEndOfBlock[39m: "198423776410639"
+
+[20:06:19.046] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87223134
+    [35mlogIndex[39m: 14
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "213617180548801"
+    [35monChainEndOfBlock[39m: "214067952977968"
+
+[20:06:19.381] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87231726
+    [35mlogIndex[39m: 30
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "214067952977968"
+    [35monChainEndOfBlock[39m: "214198265893866"
+
+[20:06:19.447] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87234551
+    [35mlogIndex[39m: 68
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7626"
+    [35mindexed[39m: "198423776410639"
+    [35monChainEndOfBlock[39m: "198947452750978"
+
+[20:06:33.204] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87294602
+    [35mlogIndex[39m: 5
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7625"
+    [35mindexed[39m: "214198265893866"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:06:33.204] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87294605
+    [35mlogIndex[39m: 9
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7626"
+    [35mindexed[39m: "198947452750978"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:06:35.375] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87300153
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7484"
+    [35mindexed[39m: "1166830945016"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:06:38.673] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87356705
+    [35mlogIndex[39m: 90
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7659"
+    [35mindexed[39m: "575061683324766"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:06:38.693] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87358311
+    [35mlogIndex[39m: 29
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7695"
+    [35mindexed[39m: "425079228479019"
+    [35monChainEndOfBlock[39m: "474547802429127"
+
+[20:07:09.557] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87633837
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7568"
+    [35mindexed[39m: "997733832165370199"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:07:09.558] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87633853
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7567"
+    [35mindexed[39m: "1329642368804727"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:07:11.166] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87644097
+    [35mlogIndex[39m: 7
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "5863"
+
+[20:07:16.817] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87666955
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7736"
+    [35mindexed[39m: "9394806679"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:07:32.741] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 87851693
+    [35mlogIndex[39m: 15
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7684"
+    [35mindexed[39m: "196841454253157"
+    [35monChainEndOfBlock[39m: "197001348453331"
+
+[20:07:47.829] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 88047878
+    [35mlogIndex[39m: 4
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7685"
+    [35mindexed[39m: "184851683201268"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:07:47.876] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 88055388
+    [35mlogIndex[39m: 8
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7684"
+    [35mindexed[39m: "197001348453331"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:07:53.565] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 88173420
+    [35mlogIndex[39m: 839
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7768"
+    [35mindexed[39m: "177205058842456"
+    [35monChainEndOfBlock[39m: "186730620357034"
+
+[20:07:58.142] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 88231804
+    [35mlogIndex[39m: 15
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "4486"
+    [35mindexed[39m: "20962764779625950"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:08:34.567] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 88622720
+    [35mlogIndex[39m: 26
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7482"
+    [35mindexed[39m: "128315"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:08:38.400] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 88653748
+    [35mlogIndex[39m: 40
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7483"
+    [35mindexed[39m: "41925507495"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:08:41.974] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 88726489
+    [35mlogIndex[39m: 128
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7120"
+    [35mindexed[39m: "117304808378"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:09:42.059] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89298243
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7729"
+    [35mindexed[39m: "7373475394238053"
+    [35monChainEndOfBlock[39m: "3907941958946169"
+
+[20:10:15.978] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89619362
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7957"
+    [35mindexed[39m: "10875170903"
+    [35monChainEndOfBlock[39m: "11000382846"
+
+[20:10:16.538] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89629885
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7956"
+    [35mindexed[39m: "208627750"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:10:19.548] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89649715
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7957"
+    [35mindexed[39m: "11000382846"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:10:19.550] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89649918
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7960"
+    [35mindexed[39m: "37393540"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:10:19.553] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89650152
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7961"
+    [35mindexed[39m: "2706547"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:10:20.154] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89652570
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7962"
+    [35mindexed[39m: "233786375"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:10:20.848] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89652766
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7963"
+    [35mindexed[39m: "17007118"
+    [35monChainEndOfBlock[39m: "2693211791"
+
+[20:10:27.179] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89753540
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7963"
+    [35mindexed[39m: "2693211791"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:10:28.033] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89760862
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7971"
+    [35mindexed[39m: "28929894"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:10:28.625] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89760946
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7972"
+    [35mindexed[39m: "14435235"
+    [35monChainEndOfBlock[39m: "3030396783"
+
+[20:10:30.867] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89798267
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7972"
+    [35mindexed[39m: "3030396783"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:10:40.618] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89874646
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "4156"
+
+[20:10:44.833] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 89968000
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7981"
+    [35mindexed[39m: "2658492266"
+    [35monChainEndOfBlock[39m: "10405168372"
+
+[20:11:01.040] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90039824
+    [35mlogIndex[39m: 39
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7893"
+    [35mindexed[39m: "14808671757545496"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:11:08.903] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90162754
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7769"
+    [35mindexed[39m: "186335589759170"
+    [35monChainEndOfBlock[39m: "221693435629000"
+
+[20:11:08.903] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90162851
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7769"
+    [35mindexed[39m: "221693435629000"
+    [35monChainEndOfBlock[39m: "228117504174110"
+
+[20:11:13.042] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90230307
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7981"
+    [35mindexed[39m: "10405168372"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:11:23.982] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90352302
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7416"
+
+[20:11:31.010] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90373870
+    [35mlogIndex[39m: 21
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7769"
+    [35mindexed[39m: "228117504174110"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:11:41.218] [43mUWARN[49m: [36mAll ERC-20 reads failed for 0x4f4d51CEF0faC93c3fB726Da1E495a93f557412D on chain 43114; not caching fallback metadata[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "Initialize"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90609488
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+
+[20:12:29.675] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90756805
+    [35mlogIndex[39m: 62
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "5231"
+    [35mindexed[39m: "10701037"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:12:38.988] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 90968119
+    [35mlogIndex[39m: 88
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7768"
+    [35mindexed[39m: "186730620357034"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:13:20.198] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91337264
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8053"
+    [35mindexed[39m: "220420616125809"
+    [35monChainEndOfBlock[39m: "322708109321746"
+
+[20:13:24.114] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91438164
+    [35mlogIndex[39m: 44
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8195"
+    [35mindexed[39m: "3181056"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:13:36.085] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91490631
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8184"
+    [35mindexed[39m: "802936117343988"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:13:39.715] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91526989
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8189"
+    [35mindexed[39m: "25812807766"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:13:47.836] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91583633
+    [35mlogIndex[39m: 27
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8206"
+    [35mindexed[39m: "13751450690685"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:13:47.845] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91584394
+    [35mlogIndex[39m: 2
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8220"
+    [35mindexed[39m: "485348687354"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:13:47.852] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91586066
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8221"
+    [35mindexed[39m: "319563828036"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:13:47.860] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91587014
+    [35mlogIndex[39m: 16
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8222"
+    [35mindexed[39m: "1368229605897516"
+    [35monChainEndOfBlock[39m: "1944500078226271"
+
+[20:13:48.014] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91604283
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8217"
+    [35mindexed[39m: "128477112526"
+    [35monChainEndOfBlock[39m: "128482121768"
+
+[20:13:56.503] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91657298
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8216"
+    [35mindexed[39m: "237008359306"
+    [35monChainEndOfBlock[39m: "237171822572"
+
+[20:13:56.504] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91657487
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "1593263"
+    [35monChainEndOfBlock[39m: "2355677"
+
+[20:13:56.517] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91658796
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "2355677"
+    [35monChainEndOfBlock[39m: "2340138"
+
+[20:13:57.271] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91665664
+    [35mlogIndex[39m: 62
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8222"
+    [35mindexed[39m: "1944500078226271"
+    [35monChainEndOfBlock[39m: "2531263314040566"
+
+[20:13:57.292] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91668553
+    [35mlogIndex[39m: 67
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "2340138"
+    [35monChainEndOfBlock[39m: "2332397"
+
+[20:14:04.240] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91683011
+    [35mlogIndex[39m: 2
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8219"
+    [35mindexed[39m: "13705974371512"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:14:04.297] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91684783
+    [35mlogIndex[39m: 11
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8207"
+    [35mindexed[39m: "24839866"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:14:04.338] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91689317
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8211"
+    [35mindexed[39m: "25422606028"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:14:04.392] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91702126
+    [35mlogIndex[39m: 32
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8222"
+    [35mindexed[39m: "2531263314040566"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:14:04.424] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91708236
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8246"
+    [35mindexed[39m: "5007942229696906"
+    [35monChainEndOfBlock[39m: "7482830836596741"
+
+[20:14:05.168] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91737124
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8246"
+    [35mindexed[39m: "7482830836596741"
+    [35monChainEndOfBlock[39m: "30735150361461028"
+
+[20:14:05.169] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91737453
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8246"
+    [35mindexed[39m: "30735150361461028"
+    [35monChainEndOfBlock[39m: "36281682801777010"
+
+[20:14:09.184] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91779953
+    [35mlogIndex[39m: 48
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8243"
+    [35mindexed[39m: "13554654829044"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:14:27.854] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91837761
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "129"
+
+[20:14:32.901] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91906713
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "2332397"
+    [35monChainEndOfBlock[39m: "1557788"
+
+[20:14:32.903] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91906797
+    [35mlogIndex[39m: 2
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "1557788"
+    [35monChainEndOfBlock[39m: "2342411"
+
+[20:14:32.941] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91909463
+    [35mlogIndex[39m: 8
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8297"
+    [35mindexed[39m: "192266166562106478"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:14:32.965] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91914160
+    [35mlogIndex[39m: 4
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8246"
+    [35mindexed[39m: "36281682801777010"
+    [35monChainEndOfBlock[39m: "29025346241421608"
+
+[20:14:32.966] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91914763
+    [35mlogIndex[39m: 33
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8246"
+    [35mindexed[39m: "29025346241421608"
+    [35monChainEndOfBlock[39m: "6095322710698538"
+
+[20:14:32.967] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91914869
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8311"
+    [35mindexed[39m: "187194103869282452"
+    [35monChainEndOfBlock[39m: "4396400779028254446"
+
+[20:14:41.453] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 91933310
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8246"
+    [35mindexed[39m: "6095322710698538"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:14:52.462] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92009207
+    [35mlogIndex[39m: 7
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8311"
+    [35mindexed[39m: "4396400779028254446"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:15:06.075] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92016240
+    [35mlogIndex[39m: 5
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8359"
+    [35mindexed[39m: "2110280484298045854"
+    [35monChainEndOfBlock[39m: "3885035163342080334"
+
+[20:15:12.343] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92090226
+    [35mlogIndex[39m: 14
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8359"
+    [35mindexed[39m: "3885035163342080334"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:15:25.936] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92145623
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8198"
+    [35mindexed[39m: "735046526446"
+    [35monChainEndOfBlock[39m: "2318342832507"
+
+[20:15:31.780] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92158518
+    [35mlogIndex[39m: 73
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8379"
+    [35mindexed[39m: "1888655130640901882"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:16:10.748] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92284585
+    [35mlogIndex[39m: 26
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8145"
+    [35mindexed[39m: "179042839549417"
+    [35monChainEndOfBlock[39m: "180374649755972"
+
+[20:16:22.954] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92316767
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8198"
+    [35mindexed[39m: "2318342832507"
+    [35monChainEndOfBlock[39m: "35384984729711"
+
+[20:16:24.002] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92342246
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8399"
+    [35mindexed[39m: "916289823541470201"
+    [35monChainEndOfBlock[39m: "1047567093359177147"
+
+[20:16:24.010] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92343787
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8385"
+    [35mindexed[39m: "16611456625"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:16:43.736] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92550663
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "2342411"
+    [35monChainEndOfBlock[39m: "9971651"
+
+[20:17:02.837] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92693044
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "9971651"
+    [35monChainEndOfBlock[39m: "10031578"
+
+[20:17:03.153] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92693248
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "10031578"
+    [35monChainEndOfBlock[39m: "10023866"
+
+[20:17:03.166] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92694728
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "10023866"
+    [35monChainEndOfBlock[39m: "9164095"
+
+[20:17:11.053] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92729863
+    [35mlogIndex[39m: 116
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7414"
+
+[20:17:11.138] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92750251
+    [35mlogIndex[39m: 37
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8541"
+    [35mindexed[39m: "1484070881840329"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:11.142] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92750926
+    [35mlogIndex[39m: 40
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8547"
+    [35mindexed[39m: "1313281203090970"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:11.144] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92751470
+    [35mlogIndex[39m: 125
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8548"
+    [35mindexed[39m: "1364762517744399"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:11.145] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 92751681
+    [35mlogIndex[39m: 24
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8549"
+    [35mindexed[39m: "1210424101496076"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:24.526] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93000977
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "9164095"
+    [35monChainEndOfBlock[39m: "9156372"
+
+[20:17:29.943] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93048517
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8399"
+    [35mindexed[39m: "1047567093359177147"
+    [35monChainEndOfBlock[39m: "1480789009237544889"
+
+[20:17:29.944] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93048568
+    [35mlogIndex[39m: 12
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8399"
+    [35mindexed[39m: "1480789009237544889"
+    [35monChainEndOfBlock[39m: "1624531920501423041"
+
+[20:17:35.480] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93190907
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8259"
+    [35mindexed[39m: "13382000398271"
+    [35monChainEndOfBlock[39m: "13819131725788"
+
+[20:17:35.481] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93190923
+    [35mlogIndex[39m: 43
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8244"
+    [35mindexed[39m: "24454901"
+    [35monChainEndOfBlock[39m: "24839925"
+
+[20:17:35.572] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93193077
+    [35mlogIndex[39m: 32
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8196"
+    [35mindexed[39m: "9156372"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:35.573] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93193080
+    [35mlogIndex[39m: 22
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8198"
+    [35mindexed[39m: "35384984729711"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:39.523] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93205215
+    [35mlogIndex[39m: 11
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8259"
+    [35mindexed[39m: "13819131725788"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:39.556] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93208112
+    [35mlogIndex[39m: 29
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8053"
+    [35mindexed[39m: "322708109321746"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:39.666] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93212527
+    [35mlogIndex[39m: 8
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8145"
+    [35mindexed[39m: "180374649755972"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:39.750] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93214676
+    [35mlogIndex[39m: 24
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8399"
+    [35mindexed[39m: "1624531920501423041"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:39.780] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93216492
+    [35mlogIndex[39m: 66
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7695"
+    [35mindexed[39m: "474547802429127"
+    [35monChainEndOfBlock[39m: "518026439703680"
+
+[20:17:39.934] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93229563
+    [35mlogIndex[39m: 10
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8244"
+    [35mindexed[39m: "24839925"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:42.774] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93251231
+    [35mlogIndex[39m: 117
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8575"
+    [35mindexed[39m: "18424644079818"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:42.838] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93257742
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8578"
+    [35mindexed[39m: "312427451988032"
+    [35monChainEndOfBlock[39m: "321279576194225"
+
+[20:17:43.226] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93262460
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8578"
+    [35mindexed[39m: "321279576194225"
+    [35monChainEndOfBlock[39m: "354320077234449"
+
+[20:17:44.676] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93273857
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8590"
+    [35mindexed[39m: "14900704519"
+    [35monChainEndOfBlock[39m: "14930479404"
+
+[20:17:44.716] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93274677
+    [35mlogIndex[39m: 186
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8578"
+    [35mindexed[39m: "354320077234449"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:44.916] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93283344
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8577"
+    [35mindexed[39m: "13277193032926"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:49.238] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93321330
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8574"
+    [35mindexed[39m: "4711277"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:58.445] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93353111
+    [35mlogIndex[39m: 9
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8583"
+    [35mindexed[39m: "24077323"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:58.492] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93355755
+    [35mlogIndex[39m: 56
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8605"
+    [35mindexed[39m: "15267163995944676228"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:58.602] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93363019
+    [35mlogIndex[39m: 8
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8593"
+    [35mindexed[39m: "12947076696675"
+    [35monChainEndOfBlock[39m: "13110615459194"
+
+[20:17:59.129] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93372110
+    [35mlogIndex[39m: 15
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8586"
+    [35mindexed[39m: "16170745976555"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:17:59.136] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93372192
+    [35mlogIndex[39m: 107
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7695"
+    [35mindexed[39m: "518026439703680"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:18:11.640] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93444276
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "1131"
+
+[20:18:18.863] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93498321
+    [35mlogIndex[39m: 32
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8593"
+    [35mindexed[39m: "13110615459194"
+    [35monChainEndOfBlock[39m: "13252138083814"
+
+[20:18:19.954] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93510605
+    [35mlogIndex[39m: 12
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "6594"
+
+[20:18:19.955] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93510605
+    [35mlogIndex[39m: 12
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "6594"
+    [35mindexed[39m: "169907093486"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:18:19.955] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93510701
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8636"
+    [35mindexed[39m: "7574938463522"
+    [35monChainEndOfBlock[39m: "27365534436267"
+
+[20:18:19.998] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93512318
+    [35mlogIndex[39m: 20
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8636"
+    [35mindexed[39m: "27365534436267"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:18:26.084] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93584492
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8590"
+    [35mindexed[39m: "14930479404"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:18:35.190] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93633040
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7125"
+
+[20:18:38.859] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93644335
+    [35mlogIndex[39m: 97
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8582"
+    [35mindexed[39m: "772404977978007182"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:18:38.868] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93646251
+    [35mlogIndex[39m: 76
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8609"
+    [35mindexed[39m: "23278203"
+    [35monChainEndOfBlock[39m: "23570843"
+
+[20:18:38.871] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93646535
+    [35mlogIndex[39m: 12
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8580"
+    [35mindexed[39m: "166348302197601"
+    [35monChainEndOfBlock[39m: "173419051634170"
+
+[20:18:38.888] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93648309
+    [35mlogIndex[39m: 68
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8580"
+    [35mindexed[39m: "173419051634170"
+    [35monChainEndOfBlock[39m: "174060498239182"
+
+[20:18:43.904] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93699276
+    [35mlogIndex[39m: 30
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8641"
+    [35mindexed[39m: "47119081869365"
+    [35monChainEndOfBlock[39m: "47232816180358"
+
+[20:18:48.336] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93734060
+    [35mlogIndex[39m: 33
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8593"
+    [35mindexed[39m: "13252138083814"
+    [35monChainEndOfBlock[39m: "13382194480836"
+
+[20:18:48.400] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93736704
+    [35mlogIndex[39m: 10
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8664"
+    [35mindexed[39m: "444701553076058343083"
+    [35monChainEndOfBlock[39m: "1220459975572470658030"
+
+[20:18:48.527] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93744786
+    [35mlogIndex[39m: 42
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8664"
+    [35mindexed[39m: "1220459975572470658030"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:18:57.708] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93861279
+    [35mlogIndex[39m: 32
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8641"
+    [35mindexed[39m: "47232816180358"
+    [35monChainEndOfBlock[39m: "47426541622381"
+
+[20:19:01.396] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93876362
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8649"
+    [35mindexed[39m: "2982687329612312834"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:07.377] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93931475
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8609"
+    [35mindexed[39m: "23570843"
+    [35monChainEndOfBlock[39m: "23793091"
+
+[20:19:16.253] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 93957000
+    [35mlogIndex[39m: 184
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8580"
+    [35mindexed[39m: "174060498239182"
+    [35monChainEndOfBlock[39m: "175303836314414"
+
+[20:19:18.010] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94044781
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8702"
+    [35mindexed[39m: "2678126820082353"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:23.981] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94082755
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8641"
+    [35mindexed[39m: "47426541622381"
+    [35monChainEndOfBlock[39m: "47596566500644"
+
+[20:19:25.986] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94106892
+    [35mlogIndex[39m: 40
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8707"
+    [35mindexed[39m: "528283847429"
+    [35monChainEndOfBlock[39m: "2123283292298"
+
+[20:19:32.547] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94187395
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8709"
+    [35mindexed[39m: "3834849873"
+    [35monChainEndOfBlock[39m: "9535214342"
+
+[20:19:34.653] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94201646
+    [35mlogIndex[39m: 9
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8709"
+    [35mindexed[39m: "9535214342"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:34.677] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94203099
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8724"
+    [35mindexed[39m: "47353686996"
+    [35monChainEndOfBlock[39m: "1022149031328"
+
+[20:19:39.874] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94227488
+    [35mlogIndex[39m: 2
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8593"
+    [35mindexed[39m: "13382194480836"
+    [35monChainEndOfBlock[39m: "13529186768018"
+
+[20:19:45.918] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94295780
+    [35mlogIndex[39m: 31
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8724"
+    [35mindexed[39m: "1022149031328"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:45.946] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94298827
+    [35mlogIndex[39m: 15
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8740"
+    [35mindexed[39m: "1011730274399"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:46.317] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94307584
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8641"
+    [35mindexed[39m: "47596566500644"
+    [35monChainEndOfBlock[39m: "47767954307730"
+
+[20:19:46.317] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94307634
+    [35mlogIndex[39m: 9
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8741"
+    [35mindexed[39m: "1001546297070"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:57.945] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94373604
+    [35mlogIndex[39m: 53
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8744"
+    [35mindexed[39m: "991486608850"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:57.985] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94374916
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8749"
+    [35mindexed[39m: "981436849557"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:58.125] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94380383
+    [35mlogIndex[39m: 68
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8706"
+    [35mindexed[39m: "1669225916997"
+    [35monChainEndOfBlock[39m: "4254409818384"
+
+[20:19:58.127] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94380432
+    [35mlogIndex[39m: 23
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8707"
+    [35mindexed[39m: "2123283292298"
+    [35monChainEndOfBlock[39m: "4115469253396"
+
+[20:19:58.258] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94394336
+    [35mlogIndex[39m: 112
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8750"
+    [35mindexed[39m: "485774266537"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:19:58.417] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94412128
+    [35mlogIndex[39m: 2
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8609"
+    [35mindexed[39m: "23793091"
+    [35monChainEndOfBlock[39m: "24050214"
+
+[20:20:04.101] [43mUWARN[49m: [36minitialising fee baseline on a position that already held liquidity — fees accrued before this point are not counted[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94422978
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7412"
+
+[20:20:09.533] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94478988
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8753"
+    [35mindexed[39m: "464363447748"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:09.762] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94521637
+    [35mlogIndex[39m: 9
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8683"
+    [35mindexed[39m: "5876249931853018558"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:09.766] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94523367
+    [35mlogIndex[39m: 3
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8641"
+    [35mindexed[39m: "47767954307730"
+    [35monChainEndOfBlock[39m: "47929347497997"
+
+[20:20:09.815] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94533814
+    [35mlogIndex[39m: 34
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8707"
+    [35mindexed[39m: "4115469253396"
+    [35monChainEndOfBlock[39m: "8005736418472"
+
+[20:20:09.816] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94533891
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8706"
+    [35mindexed[39m: "4254409818384"
+    [35monChainEndOfBlock[39m: "7749727871396"
+
+[20:20:09.913] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94547581
+    [35mlogIndex[39m: 1
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8706"
+    [35mindexed[39m: "7749727871396"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:19.719] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94585986
+    [35mlogIndex[39m: 13
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8762"
+    [35mindexed[39m: "439273225340"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:20.308] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94623440
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8707"
+    [35mindexed[39m: "8005736418472"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:20.310] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94623654
+    [35mlogIndex[39m: 12
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8765"
+    [35mindexed[39m: "7572186011012"
+    [35monChainEndOfBlock[39m: "10157762477071"
+
+[20:20:20.310] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94623696
+    [35mlogIndex[39m: 150
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8765"
+    [35mindexed[39m: "10157762477071"
+    [35monChainEndOfBlock[39m: "13880408204106"
+
+[20:20:20.338] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94628282
+    [35mlogIndex[39m: 18
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8593"
+    [35mindexed[39m: "13529186768018"
+    [35monChainEndOfBlock[39m: "13644493661198"
+
+[20:20:24.111] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94647673
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8775"
+    [35mindexed[39m: "7868215418029"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:24.161] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94651202
+    [35mlogIndex[39m: 4
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8765"
+    [35mindexed[39m: "13880408204106"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:24.444] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94671761
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8023"
+    [35mindexed[39m: "88323039063239465"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:24.444] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94671772
+    [35mlogIndex[39m: 80
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "7729"
+    [35mindexed[39m: "3907941958946169"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:26.542] [32mINFO[39m: [36mAll events have been fetched[39m
+    [35mchainId[39m: 43114
+
+[20:20:27.028] [43mUWARN[49m: [36mAll ERC-20 reads failed for 0xAcD7B3D9c10e97d0efA418903C0c7669E702E4C0 on chain 43114; not caching fallback metadata[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "Initialize"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94705208
+    [35mlogIndex[39m: 16
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+
+[20:20:40.215] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94694583
+    [35mlogIndex[39m: 0
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8780"
+    [35mindexed[39m: "13593560322550"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:40.243] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94696679
+    [35mlogIndex[39m: 18
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8779"
+    [35mindexed[39m: "7732987549503"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:40.245] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94696705
+    [35mlogIndex[39m: 6
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8763"
+    [35mindexed[39m: "5628684868125240655"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:20:40.286] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94700638
+    [35mlogIndex[39m: 17
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8785"
+    [35mindexed[39m: "7542680644432"
+    [35monChainEndOfBlock[39m: "9662928697164"
+
+[20:21:00.666] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94710582
+    [35mlogIndex[39m: 31
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8784"
+    [35mindexed[39m: "13049467810831"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:21:20.550] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94713548
+    [35mlogIndex[39m: 123
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8785"
+    [35mindexed[39m: "9662928697164"
+    [35monChainEndOfBlock[39m: "10726960586056"
+
+[20:21:28.099] [32mINFO[39m: [36mAll events have been fetched[39m
+    [35mchainId[39m: 43114
+
+[20:21:41.502] [42mUINFO[49m: [36mposition liquidity differs from end-of-block contract state (expected when the tokenId is modified again later in the block; collected fees are unaffected)[39m
+    [35mcontract[39m: "PoolManager"
+    [35mevent[39m: "ModifyLiquidity"
+    [35mchainId[39m: 43114
+    [35mblock[39m: 94763113
+    [35mlogIndex[39m: 12
+    [35maddress[39m: "0x06380C0e0912312B5150364B9DC4542BA0DbBc85"
+    [35mtokenId[39m: "8769"
+    [35mindexed[39m: "434813874434"
+    [35monChainEndOfBlock[39m: "0"
+
+[20:21:41.632] [32mINFO[39m: [36mReorg threshold reached[39m
+
+[20:21:42.095] [32mINFO[39m: [36mAll events have been fetched[39m
+    [35mchainId[39m: 43114
+
+[20:21:44.106] [32mINFO[39m: [36mAll chains are caught up. Finalizing the indexer before switching to realtime: flushing pending writes, then creating the indexes the schema promises.[39m
+
+[20:21:44.228] [32mINFO[39m: [36mCreating the 43 remaining schema indexes before the indexer reports ready. Writes are paused until they are committed. This can take a long time on a large database.[39m
+    [35mstorage[39m: "postgres"
+    [35mindexes[39m: [
+      "HookStats_totalValueLockedUSD_5orde3bthi",
+      "ModifyLiquidity_amountUSD_7jpppd11z5",
+      "ModifyLiquidity_timestamp_eg11jd1dmf",
+      "ModifyLiquidity_pool_id_timestamp_desc_3sqnojceos",
+      "ModifyLiquidity_pool_id_transaction_eqa1656oz7",
+      "Pool_createdAtTimestamp_50iebulsvm",
+      "Pool_totalValueLockedUSD_hi7z3zmciy",
+      "Pool_txCount_0cmnjng6us",
+      "Pool_volumeUSD_bc9luj0ip0",
+      "Pool_chainId_totalValueLockedUSD_desc_0apr7w0of4",
+      "Pool_hooks_chainId_totalValueLockedUSD_desc_35zols7hda",
+      "PoolDayData_pool_id_date_desc_h8utith7uo",
+      "PoolHourData_pool_id_periodStartUnix_desc_1qq3hs3rbb",
+      "Position_chainId_19dx4wigxq",
+      "Position_isActive_2f3h7hf506",
+      "Position_owner_4q8rlu4dxk",
+      "Position_tokenId_03smo71qkb",
+      "PositionTransaction_timestamp_a247ymi4fa",
+      "PositionTransaction_tokenId_0qucai7upe",
+      "PositionTransaction_txHash_fdj0ox8doi",
+      "PositionTransaction_chainId_tokenId_timestamp_desc_3r7jalch4s",
+      "Subscribe_timestamp_2q8dwwbo3q",
+      "Subscribe_tokenId_7bl4uf5hmz",
+      "Swap_timestamp_b3q97k7sny",
+      "Swap_pool_timestamp_desc_6baxk2hx1c",
+      "Tick_pool_id_tickIdx_4mthiz5yjv",
+      "Token_chainId_8xe1kahivs",
+      "TokenDayData_token_id_date_desc_4f7id5bso7",
+      "TokenHourData_token_id_periodStartUnix_desc_ftpr83f60a",
+      "Transfer_timestamp_fk8yh6080j",
+      "Transfer_tokenId_3hp6oui4tn",
+      "UniswapDayData_chainId_date_desc_50z82lbt08",
+      "Unsubscribe_timestamp_cs1omm6j70",
+      "Unsubscribe_tokenId_a9wv2y5im6",
+      "Tick_pool_id_7f835k5ccr",
+      "PoolHourData_pool_id_8uwpzn99qq",
+      "PoolDayData_pool_id_8ulntu2puo",
+      "Subscribe_position_id_fn6fii63rz",
+      "Unsubscribe_position_id_f9rvtsjaqc",
+      "Transfer_position_id_dkp63gaakr",
+      "PositionTransaction_position_id_eakt34lz89",
+      "TokenDayData_token_id_g3rd6ka9j4",
+      "TokenHourData_token_id_36dd389qyy"
+    ]
+
+[20:21:48.937] [32mINFO[39m: [36mCommitted 43 schema indexes and the ready timestamp in 4.71s.[39m
+    [35mstorage[39m: "postgres"
+
+[20:21:48.942] [32mINFO[39m: [36mThe indexer is ready. Switching to realtime indexing.[39m
+
+[20:24:36.467] [33mWARN[39m: [36mBlock #94781606 is not available on the HyperSync source yet. Instances of a load-balanced backend drift slightly around the head, so this is expected - indexing continues after an automatic retry.[39m
+    [35mchainId[39m: 43114
+    [35mlogType[39m: "Block Range Query"
+    [35mpartitionId[39m: "0"
+    [35msource[39m: "HyperSync"
+    [35mfromBlock[39m: 94781606
+    [35mtoBlock[39m: 94781608
+    [35maddresses[39m: 2
+    [35mretry[39m: 4
+    [35mmethod[39m: "getItems"
+    [35mbackOffMilliseconds[39m: 1600
+    err: {
+      "RE_EXN_ID": "Source.SourceBehindHead",
+      "blockNumber": 94781606,
+      "requestStats": [],
+      "Error": {}
+    }
+
+[ELIFECYCLE] Command failed with exit code 1.
