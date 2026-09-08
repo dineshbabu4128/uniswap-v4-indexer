@@ -9,7 +9,24 @@
 import { describe, it } from "vitest";
 import { createTestIndexer } from "envio";
 
-describe("Uniswap V4 Indexer", () => {
+/**
+ * NOTE: this suite targets chain 1, which the DEFAULT config no longer
+ * declares — config.yaml is scoped to Avalanche (43114) so that a cloud deploy
+ * cannot silently index every chain. The test indexer can only process chains
+ * present in the active codegen, so it is skipped unless one is generated that
+ * includes 1:
+ *
+ *   pnpm envio codegen --config config.ethereum.yaml && pnpm test
+ */
+const CHAIN_IN_CONFIG_1 = (() => {
+  try {
+    return Boolean((createTestIndexer() as unknown as { chains?: Record<number, unknown> }).chains?.[1]);
+  } catch {
+    return false;
+  }
+})();
+
+describe.skipIf(!CHAIN_IN_CONFIG_1)("Uniswap V4 Indexer", () => {
   it("Does not create Ticks for ModifyLiquidity on unknown pools", async (t) => {
     const indexer = createTestIndexer();
 
@@ -18,7 +35,7 @@ describe("Uniswap V4 Indexer", () => {
         chains: {
           1: { startBlock: 24240005, endBlock: 24240005 },
         },
-      }),
+      } as Parameters<typeof indexer.process>[0]),
       "ModifyLiquidity events whose pool is unknown (no prior Initialize) should be processed without writing Tick entities. The block also contains a PositionManager mint, captured as Position + Transfer."
     ).toMatchInlineSnapshot(`
       {
@@ -94,7 +111,7 @@ describe("Uniswap V4 Indexer", () => {
       chains: {
         1: { startBlock: 24240011, endBlock: 24240020 },
       },
-    });
+    } as Parameters<typeof indexer.process>[0]);
 
     const poolDayData = await indexer.PoolDayData.getAll();
     const poolHourData = await indexer.PoolHourData.getAll();

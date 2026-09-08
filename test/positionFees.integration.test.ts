@@ -17,17 +17,27 @@ import { encodeAbiParameters, parseAbiParameters } from "viem";
 import { BigDecimal, createTestIndexer } from "envio";
 import { Q128 } from "../src/utils/positionMath";
 
-const CHAIN = 1;
-const POOL_MANAGER = "0x000000000004444c5dc75cB358380D2e3dE08A90";
-const POSITION_MANAGER = "0xbD216513d74C8cf14cf4747E6AaA6420FF64ee9e";
+const CHAIN = 43114; // Avalanche: the only chain in the default config
+const POOL_MANAGER = "0x06380C0e0912312B5150364B9DC4542BA0DbBc85";
+const POSITION_MANAGER = "0xB74b1F14d2754AcfcbBe1a221023a5cf50Ab8ACD";
 const ROUTER = "0x1111111111111111111111111111111111111111"; // not the PositionManager
 const POOL_BYTES32 = "0x" + "ab".repeat(32);
 const POOL_ID = `${CHAIN}_${POOL_BYTES32}`;
 const TOKEN0 = "0x0000000000000000000000000000000000000000";
-const TOKEN1 = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
+const TOKEN1 = "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7"; // WAVAX
 const Q96 = 79228162514264337593543950336n;
 const TOKEN_ID = 424242n;
 const LIQUIDITY = 10n ** 18n;
+/**
+ * Simulated blocks must be >= the chain's configured start_block, or envio
+ * filters every event out before it reaches a handler ("never reached a
+ * handler"). Offsets 1..3 also avoid the FeeSync `_every` stride (1200 blocks,
+ * aligned to start_block) so that handler never fires during these tests.
+ */
+const START_BLOCK = 56_195_376;
+const B1 = START_BLOCK + 25;
+const B2 = START_BLOCK + 26;
+const B3 = START_BLOCK + 27;
 
 // Mutable state the mock RPC returns for getPositionInfo. Each test sets the
 // feeGrowthInsideLast the contract would hold AFTER the block being simulated.
@@ -44,7 +54,7 @@ function jsonRpcResult(id: unknown, result: string) {
 function handle(req: { id?: unknown; method?: string }) {
   switch (req.method) {
     case "eth_chainId":
-      return jsonRpcResult(req.id, "0x1");
+      return jsonRpcResult(req.id, "0xa86a"); // 43114
     case "eth_call":
       if (mockFail) {
         return {
@@ -82,11 +92,11 @@ beforeAll(async () => {
   const port = (server.address() as { port: number }).port;
   // Read lazily by rpcUrlFor(), so setting it before the first effect call is
   // enough — no module re-import needed.
-  process.env.ENVIO_MAINNET_RPC_URL = `http://127.0.0.1:${port}`;
+  process.env.ENVIO_AVALANCHE_RPC_URL = `http://127.0.0.1:${port}`;
 });
 
 afterAll(async () => {
-  delete process.env.ENVIO_MAINNET_RPC_URL;
+  delete process.env.ENVIO_AVALANCHE_RPC_URL;
   await new Promise<void>((r) => server.close(() => r()));
 });
 
@@ -116,8 +126,8 @@ function seed(indexer: ReturnType<typeof createTestIndexer>) {
   });
 
   for (const [id, symbol, decimals] of [
-    [TOKEN0, "ETH", 18n],
-    [TOKEN1, "WETH", 18n],
+    [TOKEN0, "AVAX", 18n],
+    [TOKEN1, "WAVAX", 18n],
   ] as const) {
     indexer.Token.set({
       id: `${CHAIN}_${id}`,
@@ -144,7 +154,7 @@ function seed(indexer: ReturnType<typeof createTestIndexer>) {
   indexer.Pool.set({
     id: POOL_ID,
     chainId: BigInt(CHAIN),
-    name: "ETH/WETH",
+    name: "AVAX/WAVAX",
     createdAtTimestamp: 1000n,
     createdAtBlockNumber: 1000n,
     token0: `${CHAIN}_${TOKEN0}`,
@@ -179,7 +189,7 @@ function seed(indexer: ReturnType<typeof createTestIndexer>) {
 
 /**
  * One ModifyLiquidity simulate item. Block numbers deliberately avoid multiples
- * of 300 so the FeeSync `_every` stride for chain 1 never fires here.
+ * of the FeeSync stride for this chain so that handler never fires here.
  */
 function modify(opts: {
   block: number;
@@ -227,7 +237,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
     mockPositionInfo = { liquidity: LIQUIDITY, fg0: 7n * Q128, fg1: 3n * Q128 };
 
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1001, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B1, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
     });
 
     const p = await indexer.Position.getOrThrow(`${CHAIN}_${TOKEN_ID}`);
@@ -262,7 +272,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
 
     mockPositionInfo = { liquidity: LIQUIDITY, fg0: 0n, fg1: 0n };
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1001, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B1, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
     });
 
     // Fee growth advances by Q128/2 on token0 and Q128/4 on token1. With
@@ -270,7 +280,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
     //   mulDiv(Q128/2, 1e18, Q128) = 5e17 raw = 0.5 at 18 decimals
     mockPositionInfo = { liquidity: LIQUIDITY, fg0: Q128 / 2n, fg1: Q128 / 4n };
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1002, logIndex: 1, liquidityDelta: 0n })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B2, logIndex: 1, liquidityDelta: 0n })] } },
     });
 
     const p = await indexer.Position.getOrThrow(`${CHAIN}_${TOKEN_ID}`);
@@ -295,7 +305,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
 
     mockPositionInfo = { liquidity: LIQUIDITY, fg0: 0n, fg1: 0n };
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1001, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B1, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
     });
 
     // Two modifies in one block both read the SAME end-of-block baseline, so
@@ -306,8 +316,8 @@ describe("position fee tracking (offline, mock RPC)", () => {
       chains: {
         [CHAIN]: {
           simulate: [
-            modify({ block: 1002, logIndex: 1, liquidityDelta: 0n, txHash: "0x" + "11".repeat(32) }),
-            modify({ block: 1002, logIndex: 2, liquidityDelta: 0n, txHash: "0x" + "11".repeat(32) }),
+            modify({ block: B2, logIndex: 1, liquidityDelta: 0n, txHash: "0x" + "11".repeat(32) }),
+            modify({ block: B2, logIndex: 2, liquidityDelta: 0n, txHash: "0x" + "11".repeat(32) }),
           ],
         },
       },
@@ -328,18 +338,18 @@ describe("position fee tracking (offline, mock RPC)", () => {
 
     mockPositionInfo = { liquidity: LIQUIDITY, fg0: 0n, fg1: 0n };
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1001, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B1, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
     });
 
     mockPositionInfo = { liquidity: 0n, fg0: 0n, fg1: 0n };
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1002, logIndex: 1, liquidityDelta: -LIQUIDITY })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B2, logIndex: 1, liquidityDelta: -LIQUIDITY })] } },
     });
 
     const p = await indexer.Position.getOrThrow(`${CHAIN}_${TOKEN_ID}`);
     expect(p.liquidity).toBe(0n);
     expect(p.isActive).toBe(false);
-    expect(p.closedAtTimestamp).toBe(BigInt(1_700_000_000 + 1002));
+    expect(p.closedAtTimestamp).toBe(BigInt(1_700_000_000 + B2));
     expect(p.withdrawnToken0).toBeGreaterThan(0);
     expect(p.withdrawnToken1).toBeGreaterThan(0);
 
@@ -355,7 +365,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
     await indexer.process({
       chains: {
         [CHAIN]: {
-          simulate: [modify({ block: 1001, logIndex: 1, liquidityDelta: LIQUIDITY, sender: ROUTER })],
+          simulate: [modify({ block: B1, logIndex: 1, liquidityDelta: LIQUIDITY, sender: ROUTER })],
         },
       },
     });
@@ -374,7 +384,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
     // baseline is established.
     mockFail = true;
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1001, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B1, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
     });
     let p = await indexer.Position.getOrThrow(`${CHAIN}_${TOKEN_ID}`);
     expect(p.liquidity).toBe(LIQUIDITY);
@@ -388,7 +398,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
     mockPositionInfo = { liquidity: 100n * LIQUIDITY, fg0: 1000n * Q128, fg1: 1000n * Q128 };
     await indexer.process({
       chains: {
-        [CHAIN]: { simulate: [modify({ block: 1002, logIndex: 1, liquidityDelta: 99n * LIQUIDITY })] },
+        [CHAIN]: { simulate: [modify({ block: B2, logIndex: 1, liquidityDelta: 99n * LIQUIDITY })] },
       },
     });
     p = await indexer.Position.getOrThrow(`${CHAIN}_${TOKEN_ID}`);
@@ -404,7 +414,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
       fg1: 1000n * Q128,
     };
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1003, logIndex: 1, liquidityDelta: 0n })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B3, logIndex: 1, liquidityDelta: 0n })] } },
     });
     p = await indexer.Position.getOrThrow(`${CHAIN}_${TOKEN_ID}`);
     // mulDiv(Q128/2, 100e18, Q128) = 50e18 raw = 50 tokens at 18 decimals.
@@ -417,7 +427,7 @@ describe("position fee tracking (offline, mock RPC)", () => {
 
     mockPositionInfo = { liquidity: LIQUIDITY, fg0: 0n, fg1: 0n };
     await indexer.process({
-      chains: { [CHAIN]: { simulate: [modify({ block: 1001, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
+      chains: { [CHAIN]: { simulate: [modify({ block: B1, logIndex: 1, liquidityDelta: LIQUIDITY })] } },
     });
 
     const p = await indexer.Position.getOrThrow(`${CHAIN}_${TOKEN_ID}`);
@@ -438,14 +448,14 @@ describe("position fee tracking (offline, mock RPC)", () => {
         [CHAIN]: {
           simulate: [
             modify({
-              block: 1001,
+              block: B1,
               logIndex: 1,
               liquidityDelta: LIQUIDITY,
               txHash: "0x" + "22".repeat(32),
               gasUsed,
             }),
             modify({
-              block: 1001,
+              block: B1,
               logIndex: 2,
               liquidityDelta: LIQUIDITY,
               txHash: "0x" + "22".repeat(32),

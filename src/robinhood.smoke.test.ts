@@ -20,11 +20,28 @@ import { createTestIndexer } from "envio";
 
 const ROBINHOOD = 4663;
 
-describe("Robinhood Chain (4663) smoke", () => {
+/**
+ * NOTE: this suite targets chain 4663, which the DEFAULT config no longer
+ * declares — config.yaml is scoped to Avalanche (43114) so that a cloud deploy
+ * cannot silently index every chain. The test indexer can only process chains
+ * present in the active codegen, so it is skipped unless one is generated that
+ * includes 4663:
+ *
+ *   pnpm envio codegen --config config.robinhood.yaml && pnpm test
+ */
+const CHAIN_IN_CONFIG_4663 = (() => {
+  try {
+    return Boolean((createTestIndexer() as unknown as { chains?: Record<number, unknown> }).chains?.[4663]);
+  } catch {
+    return false;
+  }
+})();
+
+describe.skipIf(!CHAIN_IN_CONFIG_4663)("Robinhood Chain (4663) smoke", () => {
   it("processes the first block with events from the v4 deploy block", async (t) => {
     const indexer = createTestIndexer();
 
-    const result = await indexer.process({ chains: { [ROBINHOOD]: {} } });
+    const result = await indexer.process({ chains: { [ROBINHOOD]: {} } } as Parameters<typeof indexer.process>[0]);
 
     // At least one block, and it actually carried events. Asserted rather than
     // snapshotted: the first eventful blocks near the deploy block are stable,
@@ -51,7 +68,7 @@ describe("Robinhood Chain (4663) smoke", () => {
     // Each process() continues where the last stopped, so this walks the first
     // few eventful blocks of the chain's v4 history.
     for (let i = 0; i < 4; i++) {
-      await indexer.process({ chains: { [ROBINHOOD]: {} } });
+      await indexer.process({ chains: { [ROBINHOOD]: {} } } as Parameters<typeof indexer.process>[0]);
     }
 
     const pools = await indexer.Pool.getAll();
