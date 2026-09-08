@@ -63,15 +63,15 @@ chains:
       - name: PoolManager
         address:
           - 0x9a13F98Cb987694C9F086b1F5eB990EeA8264Ec3
-  - id: 8453
-    start_block: 0
-    contracts:
-      - name: PositionManager
-        address:
-          - 0x7c5f5a4bbd8fd63184577525326123b519429bdc
-      - name: PoolManager
-        address:
-          - 0x498581ff718922c3f8e6a244956af099b2652b2b
+  # - id: 8453
+  #   start_block: 0
+  #   contracts:
+  #     - name: PositionManager
+  #       address:
+  #         - 0x7c5f5a4bbd8fd63184577525326123b519429bdc
+  #     - name: PoolManager
+  #       address:
+  #         - 0x498581ff718922c3f8e6a244956af099b2652b2b
   - id: 42161
     start_block: 0
     contracts:
