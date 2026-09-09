@@ -31,12 +31,20 @@ indexer.onEvent(
     // order within a mint tx is not guaranteed). The ModifyLiquidity path fills
     // them in and never reads them back from this row, so whichever runs first
     // is safe. The spread below preserves whatever the other path already wrote.
+    // Addresses are stored LOWERCASE, never EIP-55 checksummed. envio's
+    // `address_format` defaults to checksum, but the Ponder indexer this
+    // replaces wrote lowercase and the Tickwise adapter filters `owner` with an
+    // exact string match — a checksummed row simply returns nothing. The
+    // ModifyLiquidity path already lowercases; this path did not, which is why
+    // 7,202 of 8,967 deployed positions differed from Ponder by case alone.
+    const owner = event.params.to.toLowerCase();
+
     const position = (await context.Position.get(id)) ?? {
       id,
       chainId: BigInt(event.chainId),
       tokenId: event.params.id,
-      owner: event.params.to,
-      origin: event.transaction.from || "NONE",
+      owner,
+      origin: event.transaction.from?.toLowerCase() || "NONE",
       createdAtTimestamp: BigInt(event.block.timestamp),
       ...positionDefaults(),
       createdAtBlockNumber: BigInt(event.block.number),
@@ -44,18 +52,18 @@ indexer.onEvent(
       updatedAtTimestamp: BigInt(event.block.timestamp),
     };
 
-    context.Position.set({ ...position, owner: event.params.to });
+    context.Position.set({ ...position, owner });
 
     context.Transfer.set({
       id: eventId(event),
       chainId: BigInt(event.chainId),
       tokenId: event.params.id,
-      from: event.params.from,
-      to: event.params.to,
+      from: event.params.from.toLowerCase(),
+      to: owner,
       transaction: event.transaction.hash,
       logIndex: BigInt(event.logIndex),
       timestamp: BigInt(event.block.timestamp),
-      origin: event.transaction.from || "NONE",
+      origin: event.transaction.from?.toLowerCase() || "NONE",
       position_id: id,
     });
   }
@@ -68,11 +76,11 @@ indexer.onEvent(
       id: eventId(event),
       chainId: BigInt(event.chainId),
       tokenId: event.params.tokenId,
-      address: event.params.subscriber,
+      address: event.params.subscriber.toLowerCase(),
       transaction: event.transaction.hash,
       logIndex: BigInt(event.logIndex),
       timestamp: BigInt(event.block.timestamp),
-      origin: event.transaction.from || "NONE",
+      origin: event.transaction.from?.toLowerCase() || "NONE",
       position_id: positionId(event.chainId, event.params.tokenId),
     });
   }
@@ -85,11 +93,11 @@ indexer.onEvent(
       id: eventId(event),
       chainId: BigInt(event.chainId),
       tokenId: event.params.tokenId,
-      address: event.params.subscriber,
+      address: event.params.subscriber.toLowerCase(),
       transaction: event.transaction.hash,
       logIndex: BigInt(event.logIndex),
       timestamp: BigInt(event.block.timestamp),
-      origin: event.transaction.from || "NONE",
+      origin: event.transaction.from?.toLowerCase() || "NONE",
       position_id: positionId(event.chainId, event.params.tokenId),
     });
   }

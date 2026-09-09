@@ -135,6 +135,29 @@ const getClient = (chainId: number): PublicClient => {
   return clients[chainId];
 };
 
+/**
+ * Read a contract value, retrying transient failures with linear backoff.
+ * Resolves to `null` once the attempts are spent, matching the `.catch(() =>
+ * null)` convention the caller uses to tell "read failed" from "read returned
+ * a valid zero".
+ *
+ * Every error is retried rather than matching on message text: the RPC
+ * providers used here word rate limits inconsistently (QuickNode alone has two
+ * spellings), and a missed match here is invisible — it just writes the
+ * fallback and moves on.
+ */
+async function retryRead<T>(read: () => Promise<T>, attempts = 3): Promise<T | null> {
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await read();
+    } catch {
+      if (i === attempts - 1) return null;
+      await new Promise((r) => setTimeout(r, 250 * (i + 1)));
+    }
+  }
+  return null;
+}
+
 // Add this function to sanitize strings by removing null bytes and other problematic characters
 function sanitizeString(str: string): string {
   if (!str) return "";
@@ -217,7 +240,13 @@ async function fetchTokenMetadataMulticall(
   const nameBytes32Promise = contract.read.NAME().catch(() => null);
   const symbolPromise = contract.read.symbol().catch(() => null);
   const symbolBytes32Promise = contract.read.SYMBOL().catch(() => null);
-  const decimalsPromise = contract.read.decimals().catch(() => null);
+  // decimals() is retried; the other four are not. A failed name or symbol is
+  // cosmetic, but a failed decimals silently rescales every amount on the
+  // token's pools by a power of ten. Rate limiting is the dominant failure mode
+  // on this indexer, and it is transient by definition, so it is worth a few
+  // hundred milliseconds to avoid poisoning a row that `cache: true` would
+  // otherwise never revisit within this sync.
+  const decimalsPromise = retryRead(() => contract.read.decimals());
 
   const [
     nameResult,
