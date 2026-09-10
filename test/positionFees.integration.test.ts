@@ -234,7 +234,13 @@ describe("position fee tracking (offline, mock RPC)", () => {
     expect(p.liquidity).toBe(LIQUIDITY);
     expect(p.isActive).toBe(true);
     expect(p.isPriceable).toBe(true);
-    expect(p.pool).toBe(POOL_ID);
+    // BARE bytes32, deliberately NOT the namespaced POOL_ID that `Pool.id`
+    // carries. The Tickwise backend feeds this value back into
+    // `pools(where: {id_in: …})`, where its own `pool` id class re-adds the
+    // `<chainId>_` prefix — so a namespaced value here would be prefixed twice
+    // and match nothing, returning a well-formed empty list.
+    expect(p.poolId).toBe(POOL_BYTES32);
+    expect(p.poolId).not.toBe(POOL_ID);
     expect(p.tickLower).toBe(-60n);
     expect(p.tickUpper).toBe(60n);
     expect(p.closedAtTimestamp).toBeUndefined();

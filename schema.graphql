@@ -164,10 +164,25 @@ type Position @storage(postgres: true) {
   # contract's own feeGrowthInsideLast via one getPositionInfo call per modify);
   # uncollected fees are a live snapshot refreshed by the FeeSync block handler.
   #
-  # `pool`/`tickLower`/`tickUpper` are nullable because a Position row is
-  # created by PositionManager.Transfer (the mint), which may be indexed before
-  # or without the matching PoolManager.ModifyLiquidity.
-  pool: String # poolId (<chainId>_<bytes32>), null until the first ModifyLiquidity
+  # `tickLower`/`tickUpper` are nullable because a Position row is created by
+  # PositionManager.Transfer (the mint), which may be indexed before or without
+  # the matching PoolManager.ModifyLiquidity.
+  #
+  # `poolId` is NOT nullable, and holds the BARE bytes32 pool id rather than the
+  # namespaced `<chainId>_<bytes32>` used for `Pool.id`. Both choices exist to
+  # keep the Tickwise backend working against this indexer with no changes on
+  # its side:
+  #   - Its position query selects `poolId`, then feeds the values straight back
+  #     as `pools(where: {id_in: …})` where the `pool` id class re-adds the
+  #     chain prefix. A namespaced value here would be prefixed twice and match
+  #     nothing — a well-formed EMPTY list, the hardest kind of failure to see.
+  #   - It reads `raw.poolId.toLowerCase()` with no null guard, so a null would
+  #     throw rather than degrade.
+  # `""` is the "not yet known" sentinel, set until the first ModifyLiquidity.
+  # This deliberately mirrors the shape the backend was built against; see
+  # backend/src/subgraph/hyperindex/schema-map.ts, where the field is declared
+  # `idClass: "opaque"` precisely because it carries no prefix.
+  poolId: String! @index
   tickLower: BigInt
   tickUpper: BigInt
   liquidity: BigInt! # raw liquidity units

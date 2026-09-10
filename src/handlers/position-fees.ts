@@ -139,7 +139,10 @@ export function positionDefaults(): Omit<
   "id" | "chainId" | "tokenId" | "owner" | "origin" | "createdAtTimestamp"
 > {
   return {
-    pool: undefined,
+    // "" rather than undefined: `poolId` is non-null so the backend's
+    // unguarded `raw.poolId.toLowerCase()` cannot throw on a position minted
+    // before its first ModifyLiquidity.
+    poolId: "",
     tickLower: undefined,
     tickUpper: undefined,
     liquidity: 0n,
@@ -425,7 +428,9 @@ export async function trackPositionFees(args: TrackArgs): Promise<void> {
     owner: existing?.owner ?? event.transaction.from?.toLowerCase() ?? "NONE",
     origin: existing?.origin ?? event.transaction.from?.toLowerCase() ?? "NONE",
     createdAtTimestamp: existing?.createdAtTimestamp ?? BigInt(event.block.timestamp),
-    pool: poolId,
+    // BARE bytes32, not the namespaced `poolId` arg — the backend re-adds the
+    // chain prefix when it joins these back onto `Pool.id`.
+    poolId: event.params.id,
     tickLower,
     tickUpper,
     liquidity,
@@ -533,7 +538,7 @@ indexer.onBlock(
     // slice would make uncollected fees arbitrarily stale (at ~15k active
     // Robinhood positions, 200 per hourly tick takes three days to come around).
     const mine = active
-      .filter((p) => p.pool != null)
+      .filter((p) => p.poolId !== "")
       .sort((a, b) => (a.updatedAtBlock < b.updatedAtBlock ? -1 : 1))
       .slice(0, MAX_REFRESH_PER_TICK);
     if (mine.length === 0) return;
@@ -546,23 +551,24 @@ indexer.onBlock(
     }
 
     // Token decimals per unique pool, loaded ONCE rather than per position.
+    // Keyed by the BARE `Position.poolId`; `Pool.id` is namespaced, so the
+    // chain prefix is re-added for the lookup.
     const decByPool = new Map<string, { dec0: bigint; dec1: bigint }>();
-    for (const poolId of new Set(mine.map((p) => p.pool as string))) {
-      const pool = await context.Pool.get(poolId);
+    for (const bare of new Set(mine.map((p) => p.poolId))) {
+      const pool = await context.Pool.get(`${chainId}_${bare}`);
       if (!pool) continue;
       const [t0, t1] = await Promise.all([
         context.Token.get(pool.token0),
         context.Token.get(pool.token1),
       ]);
-      decByPool.set(poolId, { dec0: t0?.decimals ?? 18n, dec1: t1?.decimals ?? 18n });
+      decByPool.set(bare, { dec0: t0?.decimals ?? 18n, dec1: t1?.decimals ?? 18n });
     }
 
     // Fetch live state through Multicall3, one eth_call per batch. The
     // per-position variant cost 3 requests each, which at ~2,600 active
     // positions could not complete a pass inside the tick interval.
     const refreshable = mine.filter(
-      (p) =>
-        p.tickLower != null && p.tickUpper != null && (p.pool as string).split("_")[1],
+      (p) => p.tickLower != null && p.tickUpper != null && p.poolId !== "",
     );
     const liveById = new Map<string, LiveState | null>();
     for (let i = 0; i < refreshable.length; i += POSITIONS_PER_BATCH) {
@@ -571,7 +577,8 @@ indexer.onBlock(
         blockNumber: block.number,
         owner: positionManager,
         items: slice.map((p) => ({
-          poolId: (p.pool as string).split("_")[1] as string,
+          // Already bare — the effect wants the raw bytes32 pool id.
+          poolId: p.poolId,
           tickLower: Number(p.tickLower),
           tickUpper: Number(p.tickUpper),
           salt: saltOf(p.tokenId),
@@ -589,7 +596,7 @@ indexer.onBlock(
       // uncollected fees by 10^(18-decimals). Ponder rejects that pattern
       // explicitly; skipping leaves the previous values, which are at worst
       // stale rather than wrong by orders of magnitude.
-      const dec = decByPool.get(p.pool as string);
+      const dec = decByPool.get(p.poolId);
       if (!dec) continue;
       const { dec0, dec1 } = dec;
 

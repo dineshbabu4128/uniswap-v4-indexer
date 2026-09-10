@@ -1,9 +1,14 @@
 /*
  * Indexing progress for a running indexer.
  *
- *   pnpm progress                              # one snapshot
- *   pnpm progress --watch                      # refresh every 15s
- *   pnpm progress --config config.avalanche.yaml
+ *   pnpm progress                  # one snapshot
+ *   pnpm progress --watch          # refresh every 15s
+ *   pnpm progress --config <path>  # only if you keep several config files
+ *
+ * NOTE: this branch has a single `config.yaml` that carries every chain as a
+ * commentable block, so there is no `config.avalanche.yaml` to point at — the
+ * default is correct. (The per-chain config files exist on the `envio` branch,
+ * which is where `--config config.avalanche.yaml` came from.)
  *
  * Envio exposes everything needed on its Prometheus endpoint (default :9898)
  * but as raw counters with no percentage, because it has no notion of "done"
@@ -17,7 +22,7 @@
  * suppressed when stdout is not a TTY (e.g. redirected to a log file). Run
  * `ENVIO_TUI=true pnpm dev --config <cfg>` in a real terminal to get it.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 
 const argv = process.argv.slice(2);
 const watch = argv.includes("--watch");
@@ -41,7 +46,24 @@ const METRICS_PORT = process.env.ENVIO_INDEXER_PORT ?? process.env.METRICS_PORT 
 
 /** start_block per chain id, straight out of the active config. */
 function startBlocks(path) {
-  const text = readFileSync(path, "utf8");
+  let text;
+  try {
+    text = readFileSync(path, "utf8");
+  } catch (err) {
+    if (err?.code !== "ENOENT") throw err;
+    // Naming a config that does not exist is the likeliest way to run this
+    // wrong, because the per-chain files live on another branch. Say which
+    // files are actually here instead of surfacing a bare ENOENT.
+    const here = readdirSync(".")
+      .filter((f) => /^config.*\.yaml$/.test(f))
+      .sort();
+    console.error(
+      `no such config: ${path}\n` +
+        `config files in this directory: ${here.join(", ") || "(none)"}\n` +
+        `this branch keeps every chain in config.yaml, so omit --config.`,
+    );
+    process.exit(1);
+  }
   const chains = text.slice(text.indexOf("\nchains:"));
   const out = new Map();
   let cur = null;

@@ -44,7 +44,7 @@ describe("Uniswap V4 Indexer", () => {
                   "liquidity": 0n,
                   "origin": "0x16a4eC779ec71F9019fF79CbdD082a078C9eA06A",
                   "owner": "0x16a4eC779ec71F9019fF79CbdD082a078C9eA06A",
-                  "pool": undefined,
+                  "poolId": "",
                   "tickLower": undefined,
                   "tickUpper": undefined,
                   "tokenId": 133850n,
